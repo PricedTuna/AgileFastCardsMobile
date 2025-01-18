@@ -1,4 +1,5 @@
-import { Text, View } from "react-native";
+import { Link, router } from "expo-router";
+import { Pressable, Text, View } from "react-native";
 
 export default function Index() {
   return (
@@ -9,7 +10,13 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>index screen.</Text>
+      <Link href="/details">Go to details</Link>
+      <Pressable
+        onPress={() => router.push({ pathname: "/[id]", params: { id: 2 } })}
+      >
+        <Text>with id 1</Text>
+      </Pressable>
     </View>
   );
 }
